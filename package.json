@@ -1,0 +1,38 @@
+{
+  "name": "mern-stack-ecommerce",
+  "version": "1.0.0",
+  "description": "MERN Stack E-commerce Web Application",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d"
+  },
+  "keywords": [
+    "MERN",
+    "Stack",
+    "MongoDB",
+    "ExpressJS",
+    "ReactJS",
+    "NodeJS"
+  ],
+  "author": "Md Nuruzzaman Chowdhury",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.11"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
