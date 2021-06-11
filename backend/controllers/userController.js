@@ -80,7 +80,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
 //@routes PUT /api/users/profile
 //@access private
 const updateUserProfile = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.user._id)
+  const user = await User.findById(req.user._id);
 
   if (user) {
     user.name = req.body.name || user.name;
@@ -103,4 +103,12 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
-export { authUser, registerUser, getUserProfile, updateUserProfile };
+//@desc Get all users
+//@routes GET /api/users
+//@access private/Admin
+const getUsers = asyncHandler(async (req, res) => {
+  const users = await User.find({});
+  res.json(users);
+});
+
+export { authUser, registerUser, getUserProfile, updateUserProfile, getUsers };
